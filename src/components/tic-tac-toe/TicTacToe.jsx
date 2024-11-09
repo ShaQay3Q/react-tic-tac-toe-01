@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./TicTacToe.css";
 import lemon_icon from "../assets/lemon-svgrepo-com.svg";
 import grape_icon from "../assets/grape-svgrepo-com.svg";
@@ -38,6 +38,8 @@ export default function TicTacToe() {
 		checkWin();
 	}
 
+	// useEffect(()=>{toggle()})
+
 	function checkWin() {
 		if (data[0] === data[1] && data[1] === data[2] && data[2] !== "") {
 			win(data[0]);
@@ -55,6 +57,10 @@ export default function TicTacToe() {
 			win(data[0]);
 		} else if (data[2] === data[4] && data[4] === data[6] && data[6] !== "") {
 			win(data[2]);
+		} else {
+			if (data.every((cell) => cell !== "")) {
+				win("none");
+			}
 		}
 	}
 
@@ -64,6 +70,8 @@ export default function TicTacToe() {
 			titleRef.current.innerHTML = `Congratulations: <span><img src=${lemon_icon} alt="lemon"/></span> won!`;
 		} else if (winner === "x") {
 			titleRef.current.innerHTML = `Congratulations: <span><img src=${grape_icon} alt="grapes"/></span> won!`;
+		} else if (winner === "none") {
+			titleRef.current.innerHTML = `It's a draw!`;
 		}
 	}
 
