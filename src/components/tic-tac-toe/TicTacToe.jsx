@@ -38,8 +38,6 @@ export default function TicTacToe() {
 		checkWin();
 	}
 
-	// useEffect(()=>{toggle()})
-
 	function checkWin() {
 		if (data[0] === data[1] && data[1] === data[2] && data[2] !== "") {
 			win(data[0]);
