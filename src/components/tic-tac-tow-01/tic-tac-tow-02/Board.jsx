@@ -25,19 +25,19 @@ export default function Board() {
 	return (
 		<div className='board'>
 			<div className='board-row'>
-				<Square value={1}></Square>
-				<Square value={2}></Square>
-				<Square value={3}></Square>
+				{renderSquare(0)}
+				{renderSquare(1)}
+				{renderSquare(2)}
 			</div>
 			<div className='board-row'>
-				<Square value={4}></Square>
-				<Square value={5}></Square>
-				<Square value={6}></Square>
+				{renderSquare(3)}
+				{renderSquare(4)}
+				{renderSquare(5)}
 			</div>
 			<div className='board-row'>
-				<Square value={7}></Square>
-				<Square value={8}></Square>
-				<Square value={9}></Square>
+				{renderSquare(6)}
+				{renderSquare(7)}
+				{renderSquare(8)}
 			</div>
 		</div>
 	);
