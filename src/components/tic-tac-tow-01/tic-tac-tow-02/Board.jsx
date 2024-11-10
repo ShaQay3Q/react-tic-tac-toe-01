@@ -3,18 +3,27 @@ import "./Board.css";
 import Square from "./Square";
 
 export default function Board() {
-	/** @type {*} */
 	const [squares, setSquares] = useState(Array(9).fill(null));
 	const [isXNext, setIsXNest] = useState(true);
 
 	function handleClick(index) {
-		const squaresCopy = squares.slice();
+		console.log("handleClick");
+		console.log(`inXNext: ${isXNext}`);
+		console.log(`index ${index}`);
+
+		const squaresCopy = squares.slice(0, index);
+		console.log(`SquaresCopy: ${squaresCopy.every((cell) => cell)}`);
+
 		squaresCopy[index] = isXNext ? "X" : "O";
+		console.log(squaresCopy[index]);
+
 		setSquares(squaresCopy);
 		setIsXNest(!isXNext);
 	}
 
 	function renderSquare(index) {
+		console.log("Render Square");
+
 		return (
 			<Square
 				value={Square.index}
