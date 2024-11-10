@@ -14,9 +14,11 @@
 	justify-content: center;
 	align-items: center;
 	color: antiquewhite;
+	line-height: 1.1;
 }
 
 .title span {
+	line-height: 1.1;
 	color: #26ffcb;
 	padding-left: 15px;
 }

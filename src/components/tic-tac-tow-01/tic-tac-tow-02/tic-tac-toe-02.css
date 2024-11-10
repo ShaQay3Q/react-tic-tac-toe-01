@@ -1,0 +1,20 @@
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+body {
+	display: flex;
+	min-width: 320px;
+	min-height: 100hv;
+	background: white;
+	text-align: center;
+	flex-direction: column;
+}
+
+h1 {
+	font-size: 2.3em;
+	line-height: 1.1;
+}

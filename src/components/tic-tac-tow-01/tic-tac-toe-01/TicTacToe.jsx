@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./TicTacToe.css";
 import lemon_icon from "../assets/lemon-svgrepo-com.svg";
 import grape_icon from "../assets/grape-svgrepo-com.svg";
 
 let data = ["", "", "", "", "", "", "", "", ""];
 
-export default function TicTacToe() {
+export default function TicTacToe01() {
 	let [count, setCount] = useState(0);
 	let [lock, setLock] = useState(false);
 
