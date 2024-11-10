@@ -1,0 +1,10 @@
+.board-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-spacing: 5px;
+}
+
+.board {
+	margin: 40px;
+}
