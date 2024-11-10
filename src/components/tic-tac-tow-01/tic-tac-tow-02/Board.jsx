@@ -7,26 +7,18 @@ export default function Board() {
 	const [isXNext, setIsXNest] = useState(true);
 
 	function handleClick(index) {
-		console.log("handleClick");
-		console.log(`inXNext: ${isXNext}`);
-		console.log(`index ${index}`);
-
-		const squaresCopy = squares.slice(0, index);
-		console.log(`SquaresCopy: ${squaresCopy.every((cell) => cell)}`);
+		const squaresCopy = squares.slice();
 
 		squaresCopy[index] = isXNext ? "X" : "O";
-		console.log(squaresCopy[index]);
 
 		setSquares(squaresCopy);
 		setIsXNest(!isXNext);
 	}
 
 	function renderSquare(index) {
-		console.log("Render Square");
-
 		return (
 			<Square
-				value={Square.index}
+				value={squares[index]}
 				onClick={() => handleClick(index)}
 			/>
 		);
