@@ -44,12 +44,22 @@ export default function Board() {
 		);
 	}
 
+	function handleReset() {
+		setSquares(Array(9).fill(null));
+		setIsXNest(true);
+	}
+
 	return (
 		<div>
 			<h1>Tic Tac Toe 02</h1>
 			<div className='row status'>{status}</div>
 			<div className='row'>
-				<button className='restart-button'>Restart</button>
+				<button
+					className='restart-button'
+					onClick={handleReset}
+				>
+					Restart
+				</button>
 			</div>
 			<div className='board'>
 				<div className='board-row'>
