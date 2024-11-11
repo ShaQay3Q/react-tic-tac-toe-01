@@ -7,11 +7,9 @@ export default function Board() {
 	const [isXNext, setIsXNest] = useState(true);
 
 	function handleClick(index) {
-		const squaresCopy = squares.slice();
+		squares[index] = isXNext ? "X" : "O";
 
-		squaresCopy[index] = isXNext ? "X" : "O";
-
-		setSquares(squaresCopy);
+		setSquares(squares);
 		setIsXNest(!isXNext);
 	}
 
@@ -23,6 +21,7 @@ export default function Board() {
 			/>
 		);
 	}
+
 	return (
 		<div className='board'>
 			<div className='board-row'>
