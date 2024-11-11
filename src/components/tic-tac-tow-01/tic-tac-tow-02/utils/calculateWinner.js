@@ -20,5 +20,8 @@ export default function calculateWinner(squares) {
 			return squares[a];
 		}
 	}
+	if (squares.every((cell) => cell !== null)) {
+		return "Draw";
+	}
 	return null;
 }

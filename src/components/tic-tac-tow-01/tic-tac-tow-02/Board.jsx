@@ -8,7 +8,7 @@ export default function Board() {
 	const [isXNext, setIsXNest] = useState(true);
 
 	function handleClick(index) {
-		if (calculateWinner(squares) || squares[index]) {
+		if (calculateWinner(squares) !== null || squares[index] !== null) {
 			return;
 		}
 		squares[index] = isXNext ? "X" : "O";
@@ -22,9 +22,13 @@ export default function Board() {
 	function changeStatus(result) {
 		let stautsMessage;
 		if (result !== null) {
-			stautsMessage = `The Winner Is: ${result}!`;
+			if (result === "Draw") {
+				stautsMessage = "It is Draw!";
+			} else {
+				stautsMessage = `The Winner Is: ${result}!`;
+			}
 		} else {
-			stautsMessage = isXNext ? "Is is X's turn" : "It is O's turn";
+			stautsMessage = `It is ${isXNext ? "X" : "O"}'s turn`;
 		}
 		return stautsMessage;
 	}
